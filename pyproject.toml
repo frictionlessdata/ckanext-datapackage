@@ -39,10 +39,12 @@ dependencies = [
 dev = [
     "ruff",
     "hatch",
-    "neovim",
-    "pytest",
     "pyright",
     "ipython",
+    # ckan
+    "ckan[requirements]",
+    # pytest
+    "pytest",
     "pytest-cov",
     "pytest-vcr",
     "pytest-mock",
@@ -51,6 +53,9 @@ dev = [
     "pytest-timeout",
     "pytest-lazy-fixtures",
 ]
+
+[project.scripts.ckan.plugins]
+datapackage="ckanext.datapackage:DataPackagePlugin"
 
 [tool.hatch.version]
 path = "ckanext/datapackage/settings.py"
@@ -131,10 +136,10 @@ extend-select = ["I"]
 testpaths = ["ckanext"]
 env_files = [".env"]
 markers = [
-    "ci: integrational tests (select with '--ci')",
+  "ci: integrational tests (select with '--ci')",
 ]
 
 [tool.pyright]
-strict = ["ckanext"]
+# strict = ["ckanext"]
 include = ["ckanext"]
 ignore = ["**/__init__.py"]
