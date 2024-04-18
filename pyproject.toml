@@ -39,10 +39,12 @@ dependencies = [
 dev = [
     "ruff",
     "hatch",
+    "neovim",
     "pyright",
     "ipython",
     # ckan
-    "ckan[requirements]",
+    "ckan",
+    "flask",
     # pytest
     "pytest",
     "pytest-cov",
@@ -55,7 +57,7 @@ dev = [
 ]
 
 [project.entry-points."ckan.plugins"]
-datapackage="ckanext.datapackage:DataPackagePlugin"
+datapackage="ckanext.datapackage.plugin:DataPackagePlugin"
 
 [tool.hatch.version]
 path = "ckanext/datapackage/settings.py"
