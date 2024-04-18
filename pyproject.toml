@@ -1,0 +1,140 @@
+[project]
+name = "ckanext-datapackage"
+dynamic = ["version"]
+description = "Data Package integreation for CKAN"
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.8"
+urls.homepage = "https://github.com/frictionlessdata/ckanext-datapackage"
+authors = [
+    {name = "Open Knowledge Foundation", email = "info@okfn.org"},
+]
+keywords=[
+    "data validation",
+    "open data",
+    "json schema",
+    "json table schema",
+    "data package",
+    "tabular data package",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "dplib-py[sql]>=0.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "hatch",
+    "neovim",
+    "pytest",
+    "pyright",
+    "ipython",
+    "pytest-cov",
+    "pytest-vcr",
+    "pytest-mock",
+    "pytest-only",
+    "pytest-dotenv",
+    "pytest-timeout",
+    "pytest-lazy-fixtures",
+]
+
+[tool.hatch.version]
+path = "ckanext/datapackage/settings.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ckanext"]
+
+[tool.hatch.envs.default]
+python = "3.10"
+dependencies = [
+  "ckanext-datapackage[dev]",
+]
+
+[tool.hatch.envs.default.scripts]
+coverage = [
+  "sensible-browser coverage/index.html",
+]
+format = [
+  "ruff check --fix",
+  "ruff format ckanext",
+]
+lint = [
+  "ruff check ckanext",
+]
+release = [
+  """
+  VERSION=$(hatch run version)
+  git checkout main && git pull origin && git fetch -p
+  git log --pretty=format:"%C(yellow)%h%Creset %s%Cgreen%d" --reverse -20
+  echo "\nReleasing v$VERSION in 10 seconds. Press <CTRL+C> to abort\n" && sleep 10
+  hatch run test && git commit -a -m "v$VERSION" && git tag -a "v$VERSION" -m "v$VERSION"
+  git push --follow-tags
+  """
+]
+spec = [
+  "pytest --cov ckanext --cov-report term-missing --cov-report html:coverage --cov-fail-under 0 --timeout=300",
+]
+test = [
+  "lint",
+  "type",
+  "spec",
+]
+type = [
+  "pyright ckanext",
+]
+version = [
+  "hatch --no-color version"
+]
+
+[[tool.hatch.envs.ci.matrix]]
+python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
+
+[tool.hatch.envs.ci.scripts]
+spec = [
+  "pytest --cov ckanext --cov-report term-missing --cov-report xml --cov-fail-under 0 --timeout=300 --ci",
+]
+test = [
+  "lint",
+  "type",
+  "spec",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 90
+
+[tool.ruff.lint]
+ignore = ["E501", "E731", "F405"]
+extend-select = ["I"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401", "F403"]
+
+[tool.pytest.ini_options]
+testpaths = ["ckanext"]
+env_files = [".env"]
+markers = [
+    "ci: integrational tests (select with '--ci')",
+]
+
+[tool.pyright]
+strict = ["ckanext"]
+include = ["ckanext"]
+ignore = ["**/__init__.py"]
