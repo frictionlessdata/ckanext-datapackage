@@ -54,8 +54,8 @@ dev = [
     "pytest-lazy-fixtures",
 ]
 
-[project.scripts.ckan.plugins]
-datapackage="ckanext.datapackage:DataPackagePlugin"
+# [project.scripts.ckan.plugins]
+# datapackage="ckanext.datapackage:DataPackagePlugin"
 
 [tool.hatch.version]
 path = "ckanext/datapackage/settings.py"
