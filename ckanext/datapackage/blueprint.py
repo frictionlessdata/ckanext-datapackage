@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from ckan.plugins import toolkit
-from dplib.models import Model
 from dplib.plugins.ckan.models import CkanPackage
 from flask import Blueprint, jsonify
 
