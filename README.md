@@ -25,6 +25,20 @@ $ pip install ckanext-datapackage
 ckan.plugins = ... datapackage
 ```
 
+## Endpoint
+
+Data Package representations of a particular dataset can be accessed using the following endpoint:
+
+```
+https://{ckan-instance-host}/dataset/{dataset-id}/datapackage.json
+```
+
+Read more about [Data Package Standard](https://datapackage.org/) specifications and `datapackage.json` metadata format.
+
+## Example
+
+TODO: x
+
 ## Funding
 
 This project is funded through [NGI0 Entrust](https://nlnet.nl/entrust), a fund established by [NLnet](https://nlnet.nl) with financial support from the European Commission's [Next Generation Internet](https://ngi.eu) program. Learn more at the [NLnet project page](https://nlnet.nl/project/FrictionlessStandards/).
