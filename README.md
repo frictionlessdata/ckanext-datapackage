@@ -11,6 +11,20 @@ Data Package integreation for CKAN.
 
 This lightweight CKAN plugin adds a `dataset/<id>/datapackage.json` endpoint to every dataset in the data catalog. Read more about the [Data Package Standard](https://datapackage.org/).
 
+## Installation
+
+1.  Install the extension:
+
+```bash
+$ pip install ckanext-datapackage
+```
+
+2.  Enable the plugin in your ini file:
+
+```text
+ckan.plugins = ... datapackage
+```
+
 ## Funding
 
 This project is funded through [NGI0 Entrust](https://nlnet.nl/entrust), a fund established by [NLnet](https://nlnet.nl) with financial support from the European Commission's [Next Generation Internet](https://ngi.eu) program. Learn more at the [NLnet project page](https://nlnet.nl/project/FrictionlessStandards/).
