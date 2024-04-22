@@ -11,6 +11,10 @@ Data Package integreation for CKAN.
 
 This lightweight CKAN plugin adds a `dataset/<id>/datapackage.json` endpoint to every dataset in the data catalog. Read more about the [Data Package Standard](https://datapackage.org/).
 
+## Requirements
+
+The extension requires Python 3.8+. It is being developed and tested with CKAN 2.10. Please fill an issue if it doesn't work as expected with other versions.
+
 ## Installation
 
 1.  Install the extension:

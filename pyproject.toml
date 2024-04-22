@@ -2,7 +2,7 @@
 name = "ckanext-datapackage"
 dynamic = ["version"]
 description = "Data Package integreation for CKAN"
-license = "AGPL-3.0"
+license = "MIT"
 readme = "README.md"
 requires-python = ">=3.8"
 urls.homepage = "https://github.com/frictionlessdata/ckanext-datapackage"
