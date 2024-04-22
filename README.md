@@ -41,7 +41,94 @@ Read more about [Data Package Standard](https://datapackage.org/) specifications
 
 ## Example
 
-TODO: x
+Consider there is a dataset as below:
+
+![Dataset](assets/dataset.png)
+
+The Data Package representation of this dataset can be accessed using the following endpoint (note that the link is also available on the dataset page in the "Additional Info" section):
+
+> http://ckan:5000/dataset/example/datapackage.json
+
+```json
+{
+  "$schema": "https://datapackage.org/profiles/2.0/datapackage.json",
+  "ckan:id": "8bb0257b-37be-48ca-9129-59040264acd5",
+  "contributors": [
+    {
+      "email": "eskarev@gmail.com",
+      "roles": ["author"],
+      "title": "Evgeny Karev"
+    },
+    {
+      "email": "eskarev@gmail.com",
+      "roles": ["maintainer"],
+      "title": "Evgeny Karev"
+    }
+  ],
+  "created": "2024-04-22T14:08:29.297417",
+  "description": "It is an examplar dataset",
+  "keywords": ["data", "open"],
+  "licenses": [
+    {
+      "name": "cc-by",
+      "path": "http://www.opendefinition.org/licenses/cc-by",
+      "title": "Creative Commons Attribution"
+    }
+  ],
+  "name": "example",
+  "resources": [
+    {
+      "bytes": 1497,
+      "ckan:id": "03eec88c-a4b0-4ba9-8940-58dd4d383936",
+      "description": "It's a table about cars",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "table_cars",
+      "path": "http://ckan:5000/dataset/8bb0257b-37be-48ca-9129-59040264acd5/resource/03eec88c-a4b0-4ba9-8940-58dd4d383936/download/table-cars.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "brand",
+            "type": "string"
+          },
+          {
+            "name": "model",
+            "type": "string"
+          },
+          {
+            "name": "price",
+            "type": "number"
+          },
+          {
+            "name": "kmpl",
+            "type": "number"
+          },
+          {
+            "name": "bhp",
+            "type": "number"
+          },
+          {
+            "name": "type",
+            "type": "string"
+          }
+        ]
+      },
+      "type": "table"
+    },
+    {
+      "bytes": 13,
+      "ckan:id": "f3425eea-0ec9-481e-9679-382e7c499474",
+      "description": "It's a textual file",
+      "format": "txt",
+      "mediatype": "text/plain",
+      "name": "text",
+      "path": "http://ckan:5000/dataset/8bb0257b-37be-48ca-9129-59040264acd5/resource/f3425eea-0ec9-481e-9679-382e7c499474/download/text.txt"
+    }
+  ],
+  "title": "Example",
+  "version": "1.0"
+}
+```
 
 ## Development
 
