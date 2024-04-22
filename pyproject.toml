@@ -32,7 +32,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-    "dplib-py==0.7.3",
+    # "dplib-py==0.7.3",
 ]
 
 [project.optional-dependencies]
