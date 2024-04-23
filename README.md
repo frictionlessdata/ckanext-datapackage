@@ -130,6 +130,43 @@ The Data Package representation of this dataset can be accessed using the follow
 }
 ```
 
+## Benefits
+
+Having a Data Package representation of a dataset allows for using a rich ecosystem of tools and libraries that support the Data Package Standard. For example, data portal users can use the [frictionless-r](https://docs.ropensci.org/frictionless/) or [frictionless-py](https://framework.frictionlessdata.io/docs/console/overview.html) to access the data without loosing metadata and information about data types:
+
+```bash
+frictionless extract http://ckan:5000/dataset/example/datapackage.json
+```
+
+```text
+────────────────────────────────────────────────────────────── Dataset ──────────────────────────────────────────────────────────────
+┏━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ name       ┃ type  ┃ path                                                                                                         ┃
+┡━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ table_cars │ table │ http://ckan:5000/dataset/8bb0257b-37be-48ca-9129-59040264acd5/resource/03eec88c-a4b0-4ba9-8940-58dd4d383936… │
+│ text       │ text  │ http://ckan:5000/dataset/8bb0257b-37be-48ca-9129-59040264acd5/resource/f3425eea-0ec9-481e-9679-382e7c499474… │
+└────────────┴───────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+────────────────────────────────────────────────────────────── Tables ───────────────────────────────────────────────────────────────
+                        table_cars
+┏━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━┳━━━━━┳━━━━━━━┓
+┃ brand      ┃ model         ┃ price ┃ kmpl ┃ bhp ┃ type  ┃
+┡━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━╇━━━━━╇━━━━━━━┩
+│ Volkswagen │ Vento         │ 785   │ 16.1 │ 104 │ Sedan │
+│ Hyundai    │ Verna         │ 774   │ 17.4 │ 106 │ Sedan │
+│ Skoda      │ Rapid         │ 756   │ 15   │ 104 │ Sedan │
+│ Suzuki     │ Ciaz          │ 725   │ 20.7 │ 91  │ Sedan │
+│ Renault    │ Scala         │ 724   │ 16.9 │ 98  │ Sedan │
+│ Suzuki     │ SX4           │ 715   │ 16.5 │ 103 │ Sedan │
+│ Fiat       │ Linea         │ 700   │ 15.7 │ 112 │ Sedan │
+│ Nissan     │ Sunny         │ 699   │ 16.9 │ 98  │ Sedan │
+│ Fiat       │ Linea Classic │ 612   │ 14.9 │ 89  │ Sedan │
+│ Toyota     │ Etios         │ 603   │ 16.8 │ 89  │ Sedan │
+│ ...        │ ...           │ ...   │ ...  │ ... │ ...   │
+└────────────┴───────────────┴───────┴──────┴─────┴───────┘
+```
+
+Note that remote Data Package support is also under development in [Open Data Editor](https://opendataeditor.okfn.org/).
+
 ## Development
 
 Please follow the [Contribution Guide][CONTRIBUTING.md].
