@@ -1,4 +1,4 @@
-# Development
+# Contributing
 
 Contributin code the is simple as it is a pure Python library. Please read the following instructions:
 
