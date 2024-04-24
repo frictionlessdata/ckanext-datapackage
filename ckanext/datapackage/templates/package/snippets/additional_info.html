@@ -1,0 +1,11 @@
+{% ckan_extends %}
+
+{% block package_additional_info %}
+  {{ super() }}
+
+  <tr>
+    <th>Data Package</th>
+    <td><a href="{{ pkg_dict.name }}/datapackage.json">datapackage.json</a></td>
+  </tr>
+
+{% endblock %}

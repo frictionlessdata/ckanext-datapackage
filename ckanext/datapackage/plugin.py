@@ -11,6 +11,7 @@ class DataPackagePlugin(p.SingletonPlugin):
     p.implements(p.IActions, inherit=True)
     p.implements(p.IAuthFunctions, inherit=True)
     p.implements(p.IBlueprint)
+    p.implements(p.IConfigurer, inherit=True)
     p.implements(p.ITemplateHelpers, inherit=True)
 
     # IActions
@@ -31,6 +32,11 @@ class DataPackagePlugin(p.SingletonPlugin):
 
     def get_blueprint(self):
         return [datapackage_blueprint]
+
+    # IConfigurer
+
+    def update_config(self, config):
+        p.toolkit.add_template_directory(config, "./templates")
 
     # ITemplateHelpers
 
