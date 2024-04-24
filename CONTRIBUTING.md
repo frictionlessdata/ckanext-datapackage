@@ -10,9 +10,7 @@ To start working on the project:
 
 ## Enviroment
 
-!!! note
-
-    For development orchestration we use [Hatch](https://github.com/pypa/hatch) for Python (defined in `pyproject.toml`)
+For development orchestration we use [Hatch](https://github.com/pypa/hatch) for Python (defined in `pyproject.toml`):
 
 ```bash
 pip3 install hatch
