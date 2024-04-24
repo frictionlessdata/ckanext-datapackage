@@ -171,7 +171,7 @@ Note that remote Data Package support is also under development in [Open Data Ed
 
 ## Development
 
-Please follow the [Contribution Guide][CONTRIBUTING.md].
+Please follow the [Contribution Guide](CONTRIBUTING.md).
 
 ## Funding
 
