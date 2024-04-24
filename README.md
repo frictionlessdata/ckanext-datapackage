@@ -43,6 +43,8 @@ Read more about [Data Package Standard](https://datapackage.org/) specifications
 
 Consider there is a dataset as below:
 
+> http://ckan:5000/dataset/example
+
 ![Dataset](assets/dataset.png)
 
 The Data Package representation of this dataset can be accessed using the following endpoint (note that the link is also available on the dataset page in the "Additional Info" section):
@@ -132,7 +134,7 @@ The Data Package representation of this dataset can be accessed using the follow
 
 ## Benefits
 
-Having a Data Package representation of a dataset allows for using a rich ecosystem of tools and libraries that support the Data Package Standard. For example, data portal users can use the [frictionless-r](https://docs.ropensci.org/frictionless/) or [frictionless-py](https://framework.frictionlessdata.io/docs/console/overview.html) to access the data without loosing metadata and information about data types:
+Having a Data Package representation of a dataset allows for using a rich ecosystem of tools and libraries that support the [Data Package Standard](https://datapackage.org/). For example, data portal users can use the [frictionless-r](https://docs.ropensci.org/frictionless/) or [frictionless-py](https://framework.frictionlessdata.io/docs/console/overview.html) to access the data without loosing metadata and information about data types:
 
 ```bash
 frictionless extract http://ckan:5000/dataset/example/datapackage.json
