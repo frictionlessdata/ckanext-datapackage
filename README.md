@@ -172,6 +172,10 @@ Note that remote Data Package support is also under development in [Open Data Ed
 
 Please follow the [Contribution Guide](CONTRIBUTING.md).
 
+## Changelog
+
+Please refer to the [Changelog](CHANGELOG.md).
+
 ## Funding
 
 This project is funded through [NGI0 Entrust](https://nlnet.nl/entrust), a fund established by [NLnet](https://nlnet.nl) with financial support from the European Commission's [Next Generation Internet](https://ngi.eu) program. Learn more at the [NLnet project page](https://nlnet.nl/project/FrictionlessStandards/).
