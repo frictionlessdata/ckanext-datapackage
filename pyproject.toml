@@ -32,7 +32,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-    "dplib-py==0.7.8",
+    "dplib-py==0.7.9",
 ]
 
 [project.optional-dependencies]
@@ -50,7 +50,6 @@ dev = [
     "pytest-cov",
     "pytest-vcr",
     "pytest-mock",
-    "pytest-only",
     "pytest-dotenv",
     "pytest-timeout",
     "pytest-lazy-fixtures",
