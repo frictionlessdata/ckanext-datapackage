@@ -66,7 +66,7 @@ The Data Package representation of this dataset can be accessed using the follow
       "title": "Evgeny Karev"
     }
   ],
-  "created": "2024-04-22T14:08:29.297417",
+  "created": "2024-04-22T14:08:29.297417+01:00",
   "description": "It is an examplar dataset",
   "keywords": ["data", "open"],
   "licenses": [
