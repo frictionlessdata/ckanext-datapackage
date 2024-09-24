@@ -4,7 +4,7 @@
 [![Codebase](https://img.shields.io/badge/codebase-github-brightgreen)](https://github.com/frictionlessdata/ckanext-datapackage)
 [![Release](https://img.shields.io/pypi/v/ckanext-datapackage.svg)](https://pypi.python.org/pypi/ckanext-datapackage)
 
-Data Package integreation for CKAN.
+Data Package integration for CKAN.
 
 ## Purpose
 
